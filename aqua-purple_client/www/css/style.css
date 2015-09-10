@@ -1,0 +1,8 @@
+/* Empty. Add your own CSS if you like */
+.dark {
+  background-color: #3f4041 !important;
+  color: #ffffff;
+}
+.dark .scroll-content {
+  background-color: #3f4041 !important;
+}
