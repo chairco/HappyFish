@@ -1,0 +1,18 @@
+<ion-view view-title="My Aquariums" ng-controller="BarcodeCtrl">
+  <ion-nav-buttons side="secondary">
+      <button class="button icon ion-ios-plus-empty button-clear" ng-click="scanQrcode();"></button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item class="item item-icon-right" ng-click="waitForConnection('A8SPV2MUX7BVXZCP111A');">
+        <!--<img src="http://ec2-52-88-134-169.us-west-2.compute.amazonaws.com/debug/caches/aqua_preview.jpg" style="border-radius: 5px; height: 3rem;">-->
+		<span class="row row-center">
+          <img src="http://ec2-52-88-134-169.us-west-2.compute.amazonaws.com/debug/caches/aqua_preview.jpg" style="border-radius: 6px; border: 1px solid #ccc; height: 6rem;">
+         <span style="padding-left: 1rem;">烈冰鮮鯛山</span>
+         <i class="icon ion-chevron-right icon-accessory"></i>
+       </span>
+        
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,32 @@
+<div class="list">
+  <div ng-click="toggleOverlay('aqua_stats');" class="item item-divider item-dark" style="padding: 0; font-size: 1em; font-weight:bold; background-color: rgba(0, 0, 0, 0); border-width: 0; border-bottom-width: 1px; border-color: rgba(255, 255, 255, 0.5);"> 
+    <pre>[ Aqua Stats: <span style="color: lime;">Good!</span> ]</pre>
+  </div>
+  <ion-scroll style="max-height:77vh;">
+
+<!-- Temperature -->
+    <div class="item item-dark" style="background-color: rgba(0, 0, 0, 0); border-width: 0; border-bottom-width: 1px; border-color: rgba(255, 255, 255, 0.16);">
+      <div style="text-align:left;">Temperature: <span id="temp_value">null</span>˚C</div>
+      <canvas id="temp_chart" width="640px" height="96" class="chart chart-line chart-xl ng-isolate-scope" chart-data="data_temp" chart-options="options" chart-labels="labels" style="width:100% !important; height: 8vh !important;"></canvas>
+    </div>
+
+<!-- pH Meter -->
+    <div class="item item-dark" style="background-color: rgba(0, 0, 0, 0); border-width: 0; border-bottom-width: 1px; border-color: rgba(255, 255, 255, 0.16);">
+      <div style="text-align:left;">pH: <span id="ph_value">null</span></div>
+      <canvas id="ph_chart" width="640px" height="96" class="chart chart-line chart-xl ng-isolate-scope" chart-data="data_ph" chart-options="options" chart-labels="labels" style="width:100% !important; height: 8vh !important;"></canvas>
+    </div>
+
+<!-- Oxygen -->
+    <div class="item item-dark" style="background-color: rgba(0, 0, 0, 0); border-width: 0; border-bottom-width: 1px; border-color: rgba(255, 255, 255, 0.16);">
+      <div style="text-align:left;">Oxygen: <span id="o2_value">null</span> ppm</div>
+      <canvas id="o2_chart" width="640px" height="96" class="chart chart-line chart-xl ng-isolate-scope" chart-data="data_o2" chart-options="options" chart-labels="labels" style="width:100% !important; height: 8vh !important;"></canvas>
+    </div>
+
+<!-- Carbon Dioxide -->
+    <div class="item item-dark" style="background-color: rgba(0, 0, 0, 0); border-width: 0; border-bottom-width: 1px; border-color: rgba(255, 255, 255, 0.16);">
+      <div style="text-align:left;">Carbon Dioxide: <span id="co2_value">null</span> ppm</div>
+      <canvas id="co2_chart" width="640px" height="96" class="chart chart-line chart-xl ng-isolate-scope" chart-data="data_co2" chart-options="options" chart-labels="labels" style="width:100% !important; height: 8vh !important;"></canvas>
+    </div>
+
+  </ion-scroll>
+</div>

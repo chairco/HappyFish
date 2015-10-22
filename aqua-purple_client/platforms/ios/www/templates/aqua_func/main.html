@@ -1,0 +1,78 @@
+<ion-view view-title="烈冰鮮鯛山" ng-controller="KalayCtrl">
+  <ion-content style="height:100%;">
+        <ion-scroll delegate-handle="cam_scroll" zooming="false" direction="x" scrollbar-x="false" scrollbar-y="false" has-bouncing="false" style="height: 100vh">
+  <img id="live_camera" src="http://aqua-purple.local:10080/?action=stream" style="height: 100vh">
+ </ion-scroll>
+	<div style="position: fixed; top: 36vh; z-index: -100; width: 100%; text-align: center; font-size:xx-large; font-weight: bold; color: #aaa;">Pending...</div>
+  </ion-content>
+ <ion-footer-bar class="bar bar-footer bar-royal" style="display:table; width:100%; text-align:center;">
+    <div style="display:table-cell; table-layout: fixed; margin: 0px auto;">
+      <button class="button icon ion-stats-bars button-clear" ng-click="toggleOverlay('aqua_stats');"></button>
+    </div>
+    <div style="display:table-cell; table-layout: fixed; margin: 0px auto;">
+      <button class="button icon ion-ios-lightbulb button-clear" ng-click="toggleOverlay('aqua_light');"></button>
+    </div>
+    <div style="display:table-cell; table-layout: fixed; margin: 0px auto;">
+      <button class="button icon ion-cloud button-clear" ng-click="toggleOverlay('aqua_fog');"></button>
+    </div>
+    <div style="display:table-cell; table-layout: fixed; margin: 0px auto;">
+      <button class="button icon ion-ios-nutrition button-clear" ng-click="toggleOverlay('aqua_food');"></button>
+    </div>
+    <div style="display:table-cell; table-layout: fixed; margin: 0px auto;">
+      <button class="button icon ion-wrench button-clear" ng-click="toggleOverlay('aqua_tools');"></button>
+    </div>
+    <div style="display:table-cell; table-layout: fixed; margin: 0px auto;">
+      <button class="button icon ion-share button-clear" ng-click="toggleOverlay('aqua_social');"></button>
+    </div>
+  </ion-footer-bar>
+
+<!-- Overlay footer bar -->
+<!-- Stats -->
+  <ion-footer-bar id="aqua_stats" class="bar bar-subfooter bar-dark aqua-overlay">
+      <div ng-include="'templates/aqua_func/stats.html'"></div>
+  </ion-footer-bar>
+
+<!-- Light -->
+  <ion-footer-bar id="aqua_light" class="bar bar-subfooter bar-dark aqua-overlay">
+      <div ng-include="'templates/aqua_func/light.html'"></div>
+  </ion-footer-bar>
+
+<!-- Fog -->
+  <ion-footer-bar id="aqua_fog" class="bar bar-subfooter bar-dark aqua-overlay">
+      <div ng-include="'templates/aqua_func/fog.html'"></div>
+  </ion-footer-bar>
+
+<!-- Food -->
+  <ion-footer-bar id="aqua_food" class="bar bar-subfooter bar-dark aqua-overlay">
+    <div class="list">
+        <div ng-click="toggleOverlay('aqua_food');" class="item item-divider item-dark" style="padding:0; font-size:1em; font-weight:bold; background-color: rgba(0, 0, 0, 0); border-width: 0; border-bottom-width: 1px; border-color: rgba(255, 255, 255, 0.5);"> 
+          <pre>[ Feeding ]</pre>
+        </div>
+        <ion-scroll style="max-height:77vh;">
+        <ion-toggle class="item item-dark" style="background-color: rgba(0, 0, 0, 0); border-width: 0; border-bottom-width: 1px; border-color: rgba(255, 255, 255, 0.16); text-align:left;" ng-model="airplaneMode3" toggle-class="toggle-royal">Enable</ion-toggle>
+        <div class="row item item-dark" style="padding-top:0; padding-bottom:0; background-color: rgba(0, 0, 0, 0); border-width: 0;">
+        <div style="padding-top:1.25em; padding-left:0.7em; width:7.5em; text-align:left;">Feeding Time</div>
+        <ionic-timepicker class="col" input-obj="timePickerObject">
+          <button class="button button-block button-dark overflowShow">
+            <standard-time-meridian etime='timePickerObject.inputEpochTime'></standard-time-meridian>
+          </button>
+        </ionic-timepicker>
+        </div>
+        </ion-scroll>
+        </div>
+      </div>
+  </ion-footer-bar>
+
+<!-- Tools -->
+  <ion-footer-bar id="aqua_tools" class="bar bar-subfooter bar-dark aqua-overlay">
+    <div style="display:table-cell; table-layout: fixed; margin: 0px auto;">
+      <button class="button icon ion-wrench button-clear"></button>
+    </div>
+  </ion-footer-bar>
+
+<!-- Social -->
+  <ion-footer-bar id="aqua_social" class="bar bar-subfooter bar-dark aqua-overlay">
+      <div ng-include="'templates/aqua_func/social.html'"></div>
+  </ion-footer-bar>
+
+</ion-view>

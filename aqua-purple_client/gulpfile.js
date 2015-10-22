@@ -50,3 +50,27 @@ gulp.task('git-check', function(done) {
   }
   done();
 });
+
+// `npm install --save replace`
+var replace = require('replace');
+var replaceFiles = ['./www/js/app.js'];
+
+gulp.task('add-proxy', function() {
+  return replace({
+    regex: "http://ec2-52-88-134-169.us-west-2.compute.amazonaws.com/debug/",
+    replacement: "http://localhost:8100/",
+    paths: replaceFiles,
+    recursive: false,
+    silent: false,
+  });
+});
+
+gulp.task('remove-proxy', function() {
+  return replace({
+    regex: "http://localhost:8100/",
+    replacement: "http://ec2-52-88-134-169.us-west-2.compute.amazonaws.com/debug/",
+    paths: replaceFiles,
+    recursive: false,
+    silent: false,
+  });
+});
